@@ -26,6 +26,7 @@ class SignUp extends React.Component {
         password
       );
       await createUserProfileDocument(user, { displayName });
+
       this.setState({
         displayName: '',
         email: '',
@@ -38,7 +39,7 @@ class SignUp extends React.Component {
   };
 
   handleChange = (e) => {
-    this.setState({ [e.name]: e.value });
+    this.setState({ [e.target.name]: e.target.value });
   };
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
